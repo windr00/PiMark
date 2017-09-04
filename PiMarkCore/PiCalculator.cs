@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
-namespace PiMark
+
+namespace PiMarkCore
 {
-    class PiCalculator  
+    public class PiCalculator
     {
-        
+
         public delegate void FinishOnce();
 
         public delegate void FinishedAll();
@@ -28,7 +28,8 @@ namespace PiMark
         public void run()
         {
             bool flag = true;
-            for (uint i = 0; i < times; i++) {
+            for (uint i = 0; i < times; i++)
+            {
                 double res = 0.0;
                 for (int j = 1; j < 10000000; j += 2)
                 {
@@ -46,8 +47,6 @@ namespace PiMark
                 res = 4 * res;
                 once();
             }
-
-
             all();
         }
     }
